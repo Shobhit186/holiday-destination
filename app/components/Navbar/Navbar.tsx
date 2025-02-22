@@ -2,7 +2,9 @@
 import Container from '../Container'
 import Logo from './Logo'
 import Categories from './Categories';
+import Search from "./Search"
 import { Suspense } from 'react';
+import UserMenus from './UserMenus';
 
 // interface NavbarProps {
 //   currentUser?: SafeUser | null
@@ -14,8 +16,8 @@ const Navbar = () => {
             <Container>
                 <div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
                      <Logo />
-                     {/* <Search />
-                     <UserMenus currentUser = {currentUser} /> */}
+                     <Search />
+                     <UserMenus />
                 </div>
             </Container>
             <Suspense fallback={<div>Loading...</div>}>

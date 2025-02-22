@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import  { Nunito } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/app/components/Navbar/Navbar";
+import LoginModal from "./components/Modals/LoginModal";
+import RegisterModal from "./components/Modals/RegisterModal";
+import ToasterProvider from "./Providers/ToastProvider";
 
 const geistSans = Nunito({
   subsets: ["latin"],
@@ -22,6 +25,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} antialiased`}
       >
+        <ToasterProvider />
+        <RegisterModal />
+        <LoginModal />
         <Navbar />
         <div className="pb-20 pt-28">
         {children}
