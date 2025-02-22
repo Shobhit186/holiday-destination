@@ -2,6 +2,7 @@
 import Container from '../Container'
 import Logo from './Logo'
 import Categories from './Categories';
+import { Suspense } from 'react';
 
 // interface NavbarProps {
 //   currentUser?: SafeUser | null
@@ -17,7 +18,9 @@ const Navbar = () => {
                      <UserMenus currentUser = {currentUser} /> */}
                 </div>
             </Container>
+            <Suspense fallback={<div>Loading...</div>}>
             <Categories />
+            </Suspense>
         </div>
     </div>
   )
