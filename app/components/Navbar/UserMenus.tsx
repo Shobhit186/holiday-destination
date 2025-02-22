@@ -32,7 +32,7 @@ const UserMenus:React.FC<UsermenuProps> = ({currentUser}) => {
   return (
     <div className="relative">
       <div className="gap-3 flex flex-row items-center">
-        <div className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full transition cursor-pointer hover:bg-neutral-100" onClick={onRent}>
+        <div className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full transition cursor-pointer hover:bg-neutral-100" onClick={rentModal.onOpen}>
           Your Holiday Destination
         </div>
         <div onClick={toggleOpen} className="md:px-2 md:py-1 p-4 border-[1px] items-center border-neutral-200 rounded-full flex flex-row gap-3 cursor-pointer transition hover:shadow-md">
@@ -62,10 +62,6 @@ const UserMenus:React.FC<UsermenuProps> = ({currentUser}) => {
                 <MenuItem
                   onClick={() => router.push("/reservations")}
                   label="Upcoming Reservations"
-                />
-                <MenuItem
-                  onClick={() => { }}
-                  label="View Profile"
                 />
                 <MenuItem
                   onClick={rentModal.onOpen}
