@@ -9,17 +9,17 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import useRentModal from "@/app/hooks/useRentModal";
 import { useRouter } from "next/navigation";
+import { User } from "@prisma/client";
 
-// interface UsermenuProps {
-//   currentUser?: SafeUser | null
-// }
-const UserMenus = () => {
+interface UsermenuProps {
+  currentUser?: User | null
+}
+const UserMenus:React.FC<UsermenuProps> = ({currentUser}) => {
   const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [currentUser, setCurrentUser] = useState(false);
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
