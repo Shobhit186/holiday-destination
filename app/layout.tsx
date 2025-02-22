@@ -8,6 +8,7 @@ import ToasterProvider from "./Providers/ToastProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/Modals/RentModal";
 import SearchModal from "./components/Modals/SearchModal";
+import { Suspense } from "react";
 
 const geistSans = Nunito({
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default async function RootLayout({
         className={`${geistSans.className} antialiased`}
       >
         <ToasterProvider />
+        <Suspense fallback={<div>Loading...</div>}>
         <SearchModal />
+        </Suspense>
         <RentModal />
         <RegisterModal />
         <LoginModal />
