@@ -12,7 +12,7 @@ const Search = () => {
   const {getByValue} = useCountries();
 
   const locationValue = params?.get('locationValue');
-  const guestCount = params?.get('guestcount');
+  const guestCount = params?.get('guestCount');
   const startDate = params?.get('startDate');
   const endDate = params?.get('endDate');
 
